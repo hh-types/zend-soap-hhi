@@ -1,0 +1,27 @@
+{
+    "name": "hh-types/zend-soap-hhi",
+    "keywords": [
+        "hack",
+        "hhi",
+        "hhi-types",
+        "hhvm",
+        "types",
+        "zend",
+        "soap",
+        "zend-soap"
+    ],
+    "authors": [
+        {
+            "name": "Elvis Munoz",
+            "email": "elvis.munoz.f@gmail.com"
+        }
+    ],
+    "license": "MIT",
+    "require": {
+        "hhvm": "^3.25",
+        "hh-types/zend-server-hhi": "^2.8"
+    },
+    "require-dev": {
+        "zendframework/zend-soap": "^2.7"
+    }
+}

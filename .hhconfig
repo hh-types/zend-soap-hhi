@@ -1,0 +1,4 @@
+assume_php = false
+safe_array = true
+safe_vector_array = true
+ignored_paths = ["vendor/.+/tests/.+"]
