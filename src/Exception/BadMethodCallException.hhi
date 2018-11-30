@@ -2,8 +2,8 @@
 
 namespace Zend\Soap\Exception;
 
-class BadMethodCallException extends \BadMethodCallException implements
-    \Zend\Soap\Exception\ExceptionInterface
-{
+class BadMethodCallException
+    extends \BadMethodCallException
+    implements \Zend\Soap\Exception\ExceptionInterface {
 
 }

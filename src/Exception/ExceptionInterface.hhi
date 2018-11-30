@@ -2,7 +2,6 @@
 
 namespace Zend\Soap\Exception;
 
-interface ExceptionInterface
-{
+interface ExceptionInterface {
 
 }

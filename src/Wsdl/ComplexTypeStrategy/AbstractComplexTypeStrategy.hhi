@@ -2,9 +2,9 @@
 
 namespace Zend\Soap\Wsdl\ComplexTypeStrategy;
 
-abstract class AbstractComplexTypeStrategy implements
-    \Zend\Soap\Wsdl\ComplexTypeStrategy\ComplexTypeStrategyInterface
-{
+abstract class AbstractComplexTypeStrategy
+    implements
+        \Zend\Soap\Wsdl\ComplexTypeStrategy\ComplexTypeStrategyInterface {
     // Attributes.
     protected \Zend\Soap\Wsdl $context;
 

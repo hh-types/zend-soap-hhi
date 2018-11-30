@@ -2,8 +2,7 @@
 
 namespace Zend\Soap\Client;
 
-class DotNet extends \Zend\Soap\Client
-{
+class DotNet extends \Zend\Soap\Client {
     // Attributes.
     /* HH_FIXME[2049] */
     protected ?\Zend\Http\Client\Adapter\Curl $curlClient = null;
@@ -15,7 +14,7 @@ class DotNet extends \Zend\Soap\Client
     // Methods.
     public function __construct(
         ?string $wsdl = null,
-        ?array<string, mixed> $options = null
+        ?array<string, mixed> $options = null,
     );
     public function _doRequest(
         \Zend\Soap\Client\Common $client,
@@ -23,7 +22,7 @@ class DotNet extends \Zend\Soap\Client
         string $location,
         string $action,
         int $version,
-        ?int $oneWay = null
+        ?int $oneWay = null,
     ): string;
     /* HH_FIXME[2049] */
     public function getCurlClient(): \Zend\Http\Client\Adapter\Curl;
@@ -31,7 +30,7 @@ class DotNet extends \Zend\Soap\Client
     public function getLastResponseHeaders(): string;
     public function setCurlClient(
         /* HH_FIXME[2049] */
-        \Zend\Http\Client\Adapter\Curl $curlClient
+        \Zend\Http\Client\Adapter\Curl $curlClient,
     ): this;
     public function setOptions(array<string, mixed> $options): this;
     protected function _preProcessArguments(mixed ...$arguments): mixed;

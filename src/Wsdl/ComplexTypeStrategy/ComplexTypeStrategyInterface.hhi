@@ -2,8 +2,7 @@
 
 namespace Zend\Soap\Wsdl\ComplexTypeStrategy;
 
-interface ComplexTypeStrategyInterface
-{
+interface ComplexTypeStrategyInterface {
     public function setContext(\Zend\Soap\Wsdl $context): void;
     public function addComplexType(string $type): string;
 }

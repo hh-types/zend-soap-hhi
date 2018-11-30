@@ -2,10 +2,9 @@
 
 namespace Zend\Soap;
 
-class Client implements \Zend\Server\Client
-{
+class Client implements \Zend\Server\Client {
     // Attributes.
-    protected ?array<string, classname<dynamic>> $classmap = null;
+    protected ?array<string, classname<mixed>> $classmap = null;
     protected string $encoding = 'UTF-8';
     protected array $faultExceptions = [];
     protected string $lastMethod = '';
@@ -40,7 +39,7 @@ class Client implements \Zend\Server\Client
     // Methods.
     public function __construct(
         ?string $wsdl = null,
-        ?array<string, mixed> $options = null
+        ?array<string, mixed> $options = null,
     ): void;
     public function setWSDL(string $wsdl): this;
     public function getWSDL(): ?string;
@@ -49,9 +48,9 @@ class Client implements \Zend\Server\Client
     public function setSoapVersion(int $version): this;
     public function getSoapVersion(): int;
     public function setClassmap(
-        array<string, classname<dynamic>> $classmap
+        array<string, classname<mixed>> $classmap,
     ): this;
-    public function getClassmap(): ?array<string, classname<dynamic>>;
+    public function getClassmap(): ?array<string, classname<mixed>>;
     public function setTypemap(array $typeMap): this;
     public function getTypemap(): ?array;
     public function setEncoding(string $encoding): this;
@@ -102,14 +101,14 @@ class Client implements \Zend\Server\Client
         string $location,
         string $action,
         int $version,
-        ?int $oneWay = null
+        ?int $oneWay = null,
     ): mixed;
     protected function initSoapClientObject(): void;
     protected function _preProcessArguments(mixed ...$arguments): mixed;
     protected function _preProcessResult(mixed $result): mixed;
     public function addSoapInputHeader(
         \SoapHeader $header,
-        bool $permanent = false
+        bool $permanent = false,
     ): this;
     public function resetSoapInputHeaders(): this;
     public function getLastSoapOutputHeaderObjects(): array;
@@ -121,7 +120,7 @@ class Client implements \Zend\Server\Client
     public function getSoapClient(): \SoapClient;
     public function setCookie(
         string $cookieName,
-        ?string $cookieValue = null
+        ?string $cookieValue = null,
     ): this;
     public function getKeepAlive(): ?bool;
     public function setKeepAlive(bool $keepAlive): this;

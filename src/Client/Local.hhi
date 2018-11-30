@@ -2,8 +2,7 @@
 
 namespace Zend\Soap\Client;
 
-class Local extends \Zend\Soap\Client
-{
+class Local extends \Zend\Soap\Client {
     // Attributes.
     protected \Zend\Soap\Server $server;
 
@@ -11,7 +10,7 @@ class Local extends \Zend\Soap\Client
     public function __construct(
         \Zend\Soap\Server $server,
         ?string $wsdl,
-        ?array<string, mixed> $options = null
+        ?array<string, mixed> $options = null,
     ): void;
     public function _doRequest(
         \Zend\Soap\Client\Common $client,
@@ -19,6 +18,6 @@ class Local extends \Zend\Soap\Client
         string $location,
         string $action,
         int $version,
-        ?int $oneWay = null
+        ?int $oneWay = null,
     ): string;
 }

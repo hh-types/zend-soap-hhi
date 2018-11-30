@@ -2,20 +2,19 @@
 
 namespace Zend\Soap;
 
-class Server implements \Zend\Server\Server
-{
+class Server<T> implements \Zend\Server\Server {
     // Attributes.
     protected ?string $actor;
-    protected classname<dynamic> $class;
+    protected classname<mixed> $class;
     protected ?\SoapServer $server = null;
     protected array<mixed> $classArgs = [];
-    protected ?array<string, classname<dynamic>> $classmap;
+    protected ?array<string, classname<mixed>> $classmap;
     protected ?string $encoding;
     protected array<string> $faultExceptions = [];
     protected ?\Exception $caughtException = null;
     protected ?int $features;
     protected mixed $functions = [];
-    protected mixed $object;
+    protected T $object;
     protected bool $debug = false;
     protected ?int $persistence;
     protected ?string $request;
@@ -32,7 +31,7 @@ class Server implements \Zend\Server\Server
     // Methods.
     public function __construct(
         ?string $wsdl = null,
-        ?array<string, mixed> $options = null
+        ?array<string, mixed> $options = null,
     );
     public function setOptions(array<string, mixed> $options): this;
     public function getOptions(): array<string, mixed>;
@@ -45,8 +44,10 @@ class Server implements \Zend\Server\Server
     public function getActor(): ?string;
     public function setUri(string $uri): this;
     public function getUri(): ?string;
-    public function setClassmap(array<string, classname<dynamic>> $classmap): this;
-    public function getClassmap(): ?array<string, classname<dynamic>>;
+    public function setClassmap(
+        array<string, classname<mixed>> $classmap,
+    ): this;
+    public function getClassmap(): ?array<string, classname<mixed>>;
     public function setTypemap(array<array<string, mixed>> $typeMap): this;
     public function getTypemap(): ?array<array<string, mixed>>;
     public function setWSDL(string $wsdl): this;
@@ -59,16 +60,13 @@ class Server implements \Zend\Server\Server
     public function getSendErrors(): ?bool;
     public function setParseHuge(bool $parseHuge): this;
     public function getParseHuge(): ?bool;
-    public function addFunction(
-        mixed $function,
-        string $namespace = ''
-    ): void;
+    public function addFunction(mixed $function, string $namespace = ''): void;
     public function setClass(
-        dynamic $class,
+        mixed $class,
         string $namespace = '',
-        mixed... $argv
+        mixed ...$argv
     ): void;
-    public function setObject(mixed $object): this;
+    public function setObject(T $object): this;
     public function getFunctions(): Traversable;
     public function loadFunctions(array $definition): void;
     public function setPersistence(int $mode): void;
@@ -83,12 +81,12 @@ class Server implements \Zend\Server\Server
     public function setDebugMode(bool $debug): this;
     public function registerFaultException(mixed $class): this;
     public function isRegisteredAsFaultException(string $fault): bool;
-    public function deregisterFaultException(string $class): bool;
+    public function deregisterFaultException<TC>(TC $class): bool;
     public function getFaultExceptions(): array<string>;
     public function getException(): ?\Exception;
     public function fault(
         mixed $fault = null,
-        arraykey $code = 'Receiver'
+        arraykey $code = 'Receiver',
     ): \SoapFault;
     public function handlePhpErrors(int $errno, string $errstr): \SoapFault;
 }
