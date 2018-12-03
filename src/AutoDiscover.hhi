@@ -49,8 +49,9 @@ class AutoDiscover<T> {
     ): this;
     public function setServiceName(string $serviceName): this;
     public function getServiceName(): string;
-    public function setUri(string $uri): this;
-    public function getUri(): string;
+    public function setUri(mixed $uri): this;
+    /* HH_FIXME[2049] */
+    public function getUri(): \Zend\Uri\Http;
     public function setWsdlClass(classname<\Zend\Soap\Wsdl> $wsdlClass): this;
     public function getWsdlClass(): classname<\Zend\Soap\Wsdl>;
     public function setOperationBodyStyle(OperationStyle $operationStyle): this;

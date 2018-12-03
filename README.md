@@ -19,3 +19,4 @@ composer require hh-types/zend-soap-hhi
 - [ ] CI.
 - [ ] Tests.
 - [ ] External package `Zend\Http\Client\Adapter\Curl` ([DotNet.hhi](src/Client/DotNet.hhi)).
+- [ ] External package [zendframework/zend-uri](https://github.com/zendframework/zend-uri)
